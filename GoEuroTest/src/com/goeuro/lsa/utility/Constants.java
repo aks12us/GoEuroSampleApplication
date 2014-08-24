@@ -1,7 +1,9 @@
 package com.goeuro.lsa.utility;
 
 /**
- * @author Ankit-Reshu
+ * This is the Interface to hold the constants that could be used through the application tool
+ * 
+ * @author Ankit Khare
  *
  */
 public interface Constants {

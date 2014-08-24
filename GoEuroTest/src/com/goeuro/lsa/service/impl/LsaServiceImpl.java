@@ -16,7 +16,6 @@ import java.util.logging.Logger;
 
 import javax.json.Json;
 import javax.json.JsonArray;
-import javax.json.JsonArrayBuilder;
 import javax.json.JsonObject;
 import javax.json.JsonReader;
 
@@ -24,17 +23,16 @@ import com.goeuro.lsa.beans.LocationBean;
 import com.goeuro.lsa.service.LsaService;
 import com.goeuro.lsa.utility.Constants;
 import com.goeuro.lsa.utility.Utility;
-import com.goeuro.lsa.validator.GenericValidator;
 
 /**
- * @author Ankit-Reshu
+ * This class is the implementation for the LsaService for documentation please refer the {@link LsaService}
+ * @author Ankit Khare
  *
  */
 public class LsaServiceImpl implements LsaService {
 	Logger logger = Logger.getLogger(LsaServiceImpl.class.toString());
 	public JsonArray callOutService(String serviceUrl,String searchString) {
 		JsonArray jsonArray  = null;
-	//	Utility.setUpTrustStore();
 		try {
 			URL url = new URL(serviceUrl+searchString);
 			InputStream is = url.openStream();
@@ -43,10 +41,13 @@ public class LsaServiceImpl implements LsaService {
 			logger.log(Level.INFO, "Record Received :"+jsonArray.toString());
 		} catch (MalformedURLException e) {
 			logger.log(Level.SEVERE, e.getMessage());
+			Utility.exitSystem();
 		} catch (IOException e) {
 			logger.log(Level.SEVERE, e.getMessage());
+			Utility.exitSystem();
 		}catch(Exception e){
 			logger.log(Level.SEVERE, e.getMessage());
+			Utility.exitSystem();
 		}
 		return jsonArray;
 	}
@@ -54,7 +55,6 @@ public class LsaServiceImpl implements LsaService {
 	public List<LocationBean> storeArray(JsonArray jsonArray) {
 		JsonArray results = jsonArray;
 		List<LocationBean> locationBeansList = new ArrayList<LocationBean>();
-
 		for (JsonObject result : results.getValuesAs(JsonObject.class)) {
 			LocationBean locationBean = LocationBean.createLocationBean();
 			locationBean.set_Type(result.getString(Constants._TYPE));

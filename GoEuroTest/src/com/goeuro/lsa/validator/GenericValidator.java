@@ -4,8 +4,17 @@ import java.util.regex.Pattern;
 
 import com.goeuro.lsa.utility.Constants;
 
+/**
+ * This is the validator class that dose some generic validatation and could be reused across application
+ * @author Ankit Khare
+ *
+ */
 public class GenericValidator {
 	
+	/**This method validate the string against  <b>null</b> , <b>blank</b> and some special character like <b>"!@#$%^&*()_"</b>
+	 * @param str
+	 * @return boolean 
+	 */
 	public static boolean isValidString(String str){
 		boolean flag = true;
 		
@@ -20,18 +29,19 @@ public class GenericValidator {
 				flag = false;
 			}
 		}
-		
 		return flag;
 	}
 	
+	/** This method check if the object is null
+	 * @param obj
+	 * @return boolean
+	 */
 	public static boolean checkNull(Object obj){
 		boolean flag = true;
 		
 		if(obj.equals(Constants.NULL_OBJECT)){
 			flag = false;
 		}
-		
 		return flag;
 	}
-	
 }

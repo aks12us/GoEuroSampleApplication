@@ -1,15 +1,10 @@
 package com.goeuro.lsa.execute;
 
-import java.util.Iterator;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import javax.json.JsonArray;
-import javax.json.JsonObject;
-
-import sun.util.BuddhistCalendar;
-
 import com.goeuro.lsa.beans.LocationBean;
 import com.goeuro.lsa.service.LsaService;
 import com.goeuro.lsa.service.impl.LsaServiceImpl;
@@ -17,13 +12,21 @@ import com.goeuro.lsa.utility.PropertyFileReader;
 import com.goeuro.lsa.utility.Utility;
 import com.goeuro.lsa.validator.GenericValidator;
 
+/**
+ * This class is the main execution start point and the complete execution flow 
+ * <br/> is coded through different service method delegation.
+ * @author Ankit Khare
+ */
 public class LsaMainApp {
 	static Logger logger = Logger.getLogger(LsaMainApp.class.toString());
 	/**
-	 * @param args
+	 * This is the main method that takes the input as search string that
+	 * <br/>would be processed   and out put file would be generated 
+	 * <br/> <B>for e.g java LsaMainApp queryString </b> 
+	 * @param queryString
 	 */
 	public static void main(String[] args) {
-		
+
 		String userInput= null;
 		boolean isValid = true;
 		try {
@@ -32,6 +35,7 @@ public class LsaMainApp {
 		} catch (ArrayIndexOutOfBoundsException e) {
 			logger.log(Level.SEVERE, "Please provide the input search criteria.");
 			isValid = false;
+			Utility.exitSystem();
 		}
 		if(isValid){
 			LsaService lsaService = new LsaServiceImpl();

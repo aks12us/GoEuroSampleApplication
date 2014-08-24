@@ -8,6 +8,31 @@ import javax.json.JsonNumber;
 import com.goeuro.lsa.utility.Constants;
 import com.goeuro.lsa.validator.GenericValidator;
 
+/**
+ * This is the bean that stores the structure for the Jason response from the API
+ * <br/>For <b>e.g
+ *  <br/>[  
+   <br/>{  
+   <br/>"_id":377078,
+      <br/>"key":null,
+      <br/>"name":"Potsdam",
+      <br/>"fullName":"Potsdam, Germany",
+      <br/>"iata_airport_code":null,
+      <br/>"type":"location",
+      <br/>"country":"Germany",
+      <br/>"geo_position":{  
+         <br/>"latitude":52.39886,
+         <br/>"longitude":13.06566
+      <br/>},
+      <br/>"locationId":9254,
+      <br/>"inEurope":true,
+      <br/>"countryCode":"DE",
+      <br/>"coreCountry":true,
+      <br/>"distance":null
+   <br/>}.
+ * @author Ankit Khare
+ *
+ */
 public class LocationBean {
 	private String _Type;
 	private double _Id;
@@ -21,6 +46,9 @@ public class LocationBean {
 		return new LocationBean();
 	}
 
+	/**
+	 * @return
+	 */
 	public String get_Type() {
 		return _Type;
 	}
