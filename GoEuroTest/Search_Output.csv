@@ -1,9 +1,7 @@
 type,_id,name,type,latitude,longitude
-location,380553.0,London,location,51.50853,-0.12574
-location,441278.0,Londonderry,location,54.9981,-7.30934
-location,442345.0,Acton|London,location,51.50901,-0.2762
-location,474519.0,Beddington|London,location,51.368507,-0.134218
-airport,315090.0,London Gatwick,airport,51.160465240478516,-0.17620690166950226
-airport,315110.0,London Heathrow,airport,51.4708554,-0.452638
-station,319635.0,London Kings Cross,station,51.5322147,-0.1236132
-station,319642.0,London Victoria,station,51.4951254,-0.1441889
+location,376217.0,Berlin,location,52.52437,13.41053
+location,393496.0,Bergen,location,60.39292907714844,5.324578762054443
+location,373033.0,Berne,location,46.94809,7.44744
+location,460643.0,Berdyans'k,location,46.7663,36.79882
+airport,314826.0,Berlin Tegel,airport,52.5548,13.28903
+airport,314827.0,Berlin Schönefeld,airport,52.3887261,13.5180874
